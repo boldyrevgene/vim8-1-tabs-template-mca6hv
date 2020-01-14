@@ -1,0 +1,13 @@
+<div class="tabs__titles">
+
+  <ng-container *ngFor="let context of titlesContext">
+    <ng-container *ngComponentOutlet="titleOutlet; injector: context.injector; content: context.content">
+    </ng-container>
+  </ng-container>
+
+</div>
+
+<ng-container *ngIf="currentTab">
+  <ng-container *ngComponentOutlet="tabOutlet; content: [[currentTab.element.nativeElement]]">
+  </ng-container>
+</ng-container>
